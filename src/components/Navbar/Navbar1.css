@@ -1,0 +1,21 @@
+.boton1 {
+  color: coral;
+  size:50px;
+}
+.boton2 {
+  color: blue;
+}
+.boton3 {
+  color: red;
+}
+.CartWidget {
+  size: 50vw;
+}
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+}
+.imglogo{
+height: 5vw;
+}
