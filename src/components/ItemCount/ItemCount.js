@@ -1,8 +1,7 @@
 import { useState } from "react";
 import './ItemCount.css'
 
-
-const Counter = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial, stock, onAdd }) => {
   /*   let count = initial; */
   const [count, setCount] = useState(1);
   /* const [title, setTitle] = useState("Agregar item"); */
@@ -23,7 +22,6 @@ const Counter = ({ initial, stock, onAdd }) => {
     if (count > 1) {
       setCount((prevValue) => prevValue - 1);
     }
-
     /*setTitle(count +" " +"Item quitados") */
   };
 
@@ -34,10 +32,10 @@ const Counter = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div>
+    <div >
       {/* <h2>{title}</h2> */}
-      <h4>{count}</h4>
-      <button onClick={() => onAdd(count)} disabled= {count === 0}>Agregar al carrito</button>
+      <h4 className="colorTipografia">{count}</h4>
+      <button onClick={() => onAdd(count)} disabled= {count === 0} >Agregar al carrito</button>
       <button onClick={() => increment()}>+</button>
       <button onClick={() => decrement()}>-</button>
       <button onClick={() => clear()}>clear</button>
@@ -45,4 +43,4 @@ const Counter = ({ initial, stock, onAdd }) => {
   );
 };
 
-export default Counter;
+export default ItemCount;

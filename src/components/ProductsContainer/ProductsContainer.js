@@ -19,11 +19,9 @@ const ProductsContainer = () => {
       });
   }, []);
   /*   const arrayModificado = productos.map(productos => <h2>{productos.name}</h2>) */
-
-
   return (
-    <div>
-      <ItemList1 productos={productos} />
+    <div  >
+      <ItemList1 productos={productos}  />
     </div>
   );
 };
