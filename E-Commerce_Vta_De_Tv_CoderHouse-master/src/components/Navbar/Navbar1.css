@@ -1,0 +1,58 @@
+.boton1 {
+  color: rgb(68, 241, 33);
+  size:50px;
+}
+.boton2 {
+  color: blue;
+  text-decoration: none;
+  border-radius: 25;
+ /*  margin: 0 50px; */
+  width: auto  ;
+  height: 11vh;
+  padding: 12px;
+  font-size: 16px;
+  background: rgb(46, 38, 38);
+ /*  border-radius: 8px; */
+  flex: none;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  text-decoration: none;
+  color: chartreuse;
+  border: none;
+  border-style: none;
+}
+
+.boton2bis {
+  color: blue;
+  text-decoration: none;
+  border-radius: 25;
+  width: auto  ;
+  height: 11vh;
+  padding: 12px;
+  font-size: 16px;
+  background: rgb(12, 0, 0);
+  flex: none;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  text-decoration: none;
+  color: chartreuse;
+  border: none;
+  border-style: none;
+}
+.boton3 {
+  color: red;
+}
+.CartWidget {
+  size: 50vw;
+}
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  
+}
+.imglogo{
+height: 5vw;
+}
