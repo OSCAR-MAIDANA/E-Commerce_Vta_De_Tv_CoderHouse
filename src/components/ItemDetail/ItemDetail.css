@@ -1,0 +1,29 @@
+.botonesvscarrito {
+  text-decoration: none;
+  border-radius: 25;
+  width: 200px;
+  margin: 0 50px;
+  font-size: 35px;
+  flex: none;
+  padding: 12px;
+  font-size: 20px;
+  background: black;
+  align-self: center;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  text-decoration: solid;
+  color: rgb(83, 250, 32);
+  border: none;
+  border-style: none;
+  flex-direction: column;
+  display: flex;
+}
+.colorTipografia {
+  color: white;
+}
+
+.tamañoTipografia {
+  color: white;
+  font-size: 20px;
+}

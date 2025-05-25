@@ -1,0 +1,50 @@
+# Archivo: .github/workflows/deploy-react-app.yml (el nombre del archivo lo puedes dejar igual si ya aparece)
+
+name: Deploy React App to GitHub Pages # El nombre de tu robot en GitHub Actions
+
+on:
+  push:
+    branches: ["master"] # Asegúrate de que sea tu rama principal (master)
+  workflow_dispatch: # Permite iniciar el robot manualmente desde la pestaña Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest # El sistema operativo donde se ejecutará este robot
+
+    steps:
+      - name: Checkout code # Paso 1: Obtener el código de tu repositorio
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js # Paso 2: Configurar Node.js, necesario para React
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Puedes ajustar la versión de Node.js si la tuya es diferente (ej: '16', '20')
+
+      - name: Install dependencies # Paso 3: Instalar todas las librerías de tu proyecto (npm install)
+        run: npm install
+
+      - name: Build React App # Paso 4: ¡Construir la aplicación de React! Esto crea la carpeta 'build'
+        run: npm run build
+
+      - name: Upload production-ready files # Paso 5: Subir los archivos construidos para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build # <--- ¡IMPORTANTE! Esto le dice a GitHub que la carpeta a publicar es 'build'
+
+      - name: Deploy to GitHub Pages # Paso 6: Desplegar los archivos a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
